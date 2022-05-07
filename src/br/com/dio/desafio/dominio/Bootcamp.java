@@ -1,5 +1,7 @@
 package br.com.dio.desafio.dominio;
 
+import br.com.dio.desafio.dominio.forum.Forum;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -13,7 +15,11 @@ public class Bootcamp {
     private final LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private final Forum forum = new Forum();
 
+    public Forum getForum() {
+        return forum;
+    }
 
     public String getNome() {
         return nome;

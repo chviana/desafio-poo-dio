@@ -2,6 +2,8 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.forum.Comentario;
+import br.com.dio.desafio.dominio.forum.Topico;
 
 import java.time.LocalDate;
 
@@ -57,6 +59,20 @@ public class Main {
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
+
+
+        // Forum
+        Topico topico1 = new Topico();
+        topico1.setTitulo("Nao gera certificado");
+        topico1.setMensagem("Terminei o bootcamp e o certificado nao eh gerado");
+        topico1.setUsuario(devJoao);
+        bootcamp.getForum().adicionarTopico(topico1);
+
+        Comentario comentario1 = new Comentario(devCamila, "Envie um email para 'support@digitalinnovationone.atlassian.net' descrevendo seu problema.");
+        topico1.adicionarComentario(comentario1);
+
+        bootcamp.getForum().listarTodosTopicos();
+
 
     }
 
